@@ -1,0 +1,22 @@
+✔ computes server-side totals in integer paise (1.9502ms)
+✔ rejects empty, unknown, invalid-quantity, and nameless orders (0.2279ms)
+✔ requires sequential state changes and locks terminal orders (0.2918ms)
+✔ exports Prometheus order metrics (0.2167ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 139.9838
+ℹ start of coverage report
+ℹ -----------------------------------------------------------------
+ℹ file             | line % | branch % | funcs % | uncovered lines
+ℹ -----------------------------------------------------------------
+ℹ order-service.js | 100.00 |    91.67 |  100.00 | 
+ℹ server.js        |  63.64 |    54.55 |   35.71 | 6-8 10
+ℹ -----------------------------------------------------------------
+ℹ all files        |  75.00 |    80.00 |   52.63 | 
+ℹ -----------------------------------------------------------------
+ℹ end of coverage report

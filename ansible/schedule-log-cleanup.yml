@@ -1,0 +1,13 @@
+---
+- name: Schedule weekly MealTrail delivery log retention
+  hosts: mealtrail_hosts
+  become: true
+  tasks:
+    - name: Run cleanup each Sunday at 03:15
+      ansible.builtin.cron:
+        name: MealTrail delivery log retention
+        user: root
+        weekday: "0"
+        hour: "3"
+        minute: "15"
+        job: "cd /opt/mealtrail && ansible-playbook -i inventory cleanup-delivery-logs.yml >> /var/log/mealtrail/cleanup.log 2>&1"

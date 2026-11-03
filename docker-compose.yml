@@ -1,0 +1,10 @@
+services:
+  mealtrail:
+    build: .
+    image: mealtrail:local
+    ports: ["3000:3000"]
+    environment: { PORT: "3000", DATA_FILE: /app/data/orders.json }
+    volumes: [mealtrail-data:/app/data]
+    restart: unless-stopped
+volumes:
+  mealtrail-data:

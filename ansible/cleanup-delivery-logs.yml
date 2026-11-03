@@ -1,0 +1,25 @@
+---
+- name: Remove expired MealTrail delivery simulation logs
+  hosts: mealtrail_hosts
+  become: true
+  vars:
+    delivery_log_dir: /var/log/mealtrail/delivery
+    retention_days: 14
+  tasks:
+    - name: Inspect the log directory
+      ansible.builtin.stat:
+        path: "{{ delivery_log_dir }}"
+      register: log_dir
+    - name: Find old delivery logs
+      ansible.builtin.find:
+        paths: "{{ delivery_log_dir }}"
+        age: "{{ retention_days }}d"
+        file_type: file
+        patterns: ['*.log', '*.jsonl']
+      register: expired_logs
+      when: log_dir.stat.exists
+    - name: Remove expired matching log files
+      ansible.builtin.file:
+        path: "{{ item.path }}"
+        state: absent
+      loop: "{{ expired_logs.files | default([]) }}"

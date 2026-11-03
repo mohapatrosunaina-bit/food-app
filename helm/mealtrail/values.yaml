@@ -1,0 +1,7 @@
+replicaCount: 2
+image: { repository: ghcr.io/your-org/food-app, tag: "1.0.0", pullPolicy: IfNotPresent }
+service: { port: 3000 }
+ingress: { enabled: true, className: nginx, host: mealtrail.local, path: / }
+autoscaling: { enabled: true, minReplicas: 2, maxReplicas: 8, targetCPUUtilizationPercentage: 60 }
+canary: { enabled: false, weight: 20, image: { repository: ghcr.io/your-org/food-app, tag: canary } }
+secrets: { existingSecret: mealtrail-secrets }
