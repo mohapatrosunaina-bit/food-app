@@ -2,7 +2,7 @@
 
 **MealTrail** is a small food-ordering and delivery-tracking demo built to exercise the five DevOps phases in the supplied project brief. The customer website includes a browsable menu, cart, mock checkout, order tracking, and a restaurant kitchen view. Orders use trusted menu prices and integer paise; no real payment is taken.
 
-## Run locally
+## Public website\n\nhttps://mohapatrosunaina-bit.github.io/food-app/\n\nThe published static demo stores sample orders in this browser only. The Node API remains available when you run the app locally.\n\n## Run locally
 
 Requires Node.js 20+. No npm packages are required.
 
