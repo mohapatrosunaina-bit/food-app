@@ -1,4 +1,4 @@
-name: CD - Publish MealTrail Website
+﻿name: CD - Publish Tuckin Website
 on:
   push:
     branches: [main]

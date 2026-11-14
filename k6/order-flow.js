@@ -15,3 +15,4 @@ export default function () {
   if (ok) { const order = res.json(); deliveryTime.add(order.estimatedDeliveryMinutes); check(http.get(`${base}/api/orders/${order.id}`), {'order trackable': r => r.status === 200 && r.json('status') === 'PLACED'}); }
   sleep(1);
 }
+

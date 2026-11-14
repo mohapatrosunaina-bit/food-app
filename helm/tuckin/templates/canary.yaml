@@ -1,4 +1,4 @@
-{{- if .Values.canary.enabled }}
+﻿{{- if .Values.canary.enabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,7 +15,7 @@ spec:
         app.kubernetes.io/name: {{ .Chart.Name }}
     spec:
       containers:
-        - name: mealtrail
+        - name: Tuckin
           image: "{{ .Values.canary.image.repository }}:{{ .Values.canary.image.tag }}"
           ports:
             - name: http

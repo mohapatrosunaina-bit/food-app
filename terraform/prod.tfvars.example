@@ -1,2 +1,2 @@
-environment = "prod"
-namespace = "mealtrail-prod"
+﻿environment = "prod"
+namespace = "Tuckin-prod"

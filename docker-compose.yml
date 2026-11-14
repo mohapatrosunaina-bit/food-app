@@ -1,10 +1,10 @@
-services:
-  mealtrail:
+﻿services:
+  Tuckin:
     build: .
-    image: mealtrail:local
+    image: Tuckin:local
     ports: ["3000:3000"]
     environment: { PORT: "3000", DATA_FILE: /app/data/orders.json }
-    volumes: [mealtrail-data:/app/data]
+    volumes: [Tuckin-data:/app/data]
     restart: unless-stopped
 volumes:
-  mealtrail-data:
+  Tuckin-data:

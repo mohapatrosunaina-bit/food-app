@@ -1,18 +1,18 @@
-groups:
-  - name: mealtrail
+﻿groups:
+  - name: Tuckin
     rules:
-      - alert: MealTrailHighOrderErrorRate
-        expr: rate(mealtrail_http_errors_total[5m]) / clamp_min(rate(mealtrail_http_requests_total[5m]), 0.001) > 0.05
+      - alert: TuckinHighOrderErrorRate
+        expr: rate(Tuckin_http_errors_total[5m]) / clamp_min(rate(Tuckin_http_requests_total[5m]), 0.001) > 0.05
         for: 2m
         labels:
           severity: warning
         annotations:
-          summary: MealTrail error rate is above 5%
+          summary: Tuckin error rate is above 5%
           description: More than 5% of requests have returned an error for 2 minutes.
-      - alert: MealTrailNoReadyRequests
-        expr: up{job="mealtrail"} == 0
+      - alert: TuckinNoReadyRequests
+        expr: up{job="Tuckin"} == 0
         for: 1m
         labels:
           severity: critical
         annotations:
-          summary: MealTrail metrics target is unreachable
+          summary: Tuckin metrics target is unreachable

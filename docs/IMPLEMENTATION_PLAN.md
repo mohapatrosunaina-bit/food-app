@@ -20,3 +20,4 @@ The brief has five phases. Each phase is represented by code or a repeatable dep
 ## Known demonstration limits
 
 Single-process JSON persistence supports a local demonstration only; HPA and multi-replica deployment need PostgreSQL/shared state. The canary chart demonstrates traffic splitting, but running it needs an ingress-nginx controller, two published tags and a Kubernetes cluster. The lunch report requires a real k6 run against the target environment.
+

@@ -1,4 +1,4 @@
-name: CI and image release
+﻿name: CI and image release
 on:
   pull_request:
   push:
@@ -18,7 +18,7 @@ jobs:
       - run: npm run build
       - name: Coverage gate
         run: node --experimental-test-coverage --test | tee coverage.txt && node scripts/check-coverage.js coverage.txt
-      - run: docker build -t mealtrail:${GITHUB_SHA} .
+      - run: docker build -t Tuckin:${GITHUB_SHA} .
       - name: Trivy filesystem scan
         uses: aquasecurity/trivy-action@v0.36.0
         with:

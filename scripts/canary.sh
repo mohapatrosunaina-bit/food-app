@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 set -euo pipefail
-NAMESPACE="${NAMESPACE:-mealtrail}"
-RELEASE="${RELEASE:-mealtrail}"
-CHART="${CHART:-./helm/mealtrail}"
+NAMESPACE="${NAMESPACE:-Tuckin}"
+RELEASE="${RELEASE:-Tuckin}"
+CHART="${CHART:-./helm/Tuckin}"
 IMAGE_REPOSITORY="${IMAGE_REPOSITORY:?Set IMAGE_REPOSITORY to a published image}"
 STABLE_TAG="${STABLE_TAG:?Set STABLE_TAG to a stable release tag}"
 CANARY_TAG="${CANARY_TAG:?Set CANARY_TAG to a canary release tag}"

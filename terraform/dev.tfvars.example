@@ -1,2 +1,2 @@
-environment = "dev"
-namespace = "mealtrail-dev"
+﻿environment = "dev"
+namespace = "Tuckin-dev"

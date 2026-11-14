@@ -12,3 +12,4 @@ Run `k6 run k6/order-flow.js` against the intended environment with `BASE_URL` s
 | HPA minimum / peak / final replicas | Pending cluster observation |
 
 Do not present configured thresholds as measured results. Attach the k6 summary and Kubernetes replica observations after the run.
+

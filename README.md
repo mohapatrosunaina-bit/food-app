@@ -1,6 +1,6 @@
-# MealTrail
+﻿# Tuckin
 
-**MealTrail** is a small food-ordering and delivery-tracking demo built to exercise the five DevOps phases in the supplied project brief. The customer website includes a browsable menu, cart, mock checkout, order tracking, and a restaurant kitchen view. Orders use trusted menu prices and integer paise; no real payment is taken.
+**Tuckin** is a small food-ordering and delivery-tracking demo built to exercise the five DevOps phases in the supplied project brief. The customer website includes a browsable menu, cart, mock checkout, order tracking, and a restaurant kitchen view. Orders use trusted menu prices and integer paise; no real payment is taken.
 
 ## Public website\n\nhttps://mohapatrosunaina-bit.github.io/food-app/\n\nThe published static demo stores sample orders in this browser only. The Node API remains available when you run the app locally.\n\n## Run locally
 
@@ -25,15 +25,15 @@ GitHub Actions runs tests, build checks, an 80% coverage gate, Docker build, and
 
 ## Phase 3 — Containerization
 
-`Dockerfile` uses a minimal Node Alpine runtime and a non-root user. Start the app with Compose. Image build is part of CI and Trivy scans source and published images. Scan locally with `trivy image mealtrail:local` after building.
+`Dockerfile` uses a minimal Node Alpine runtime and a non-root user. Start the app with Compose. Image build is part of CI and Trivy scans source and published images. Scan locally with `trivy image Tuckin:local` after building.
 
 ## Phase 4 — Orchestration
 
 The Helm chart deploys the platform behind an Ingress, configures liveness/readiness probes, and sets an HPA on CPU. Use `values-dev.yaml`, `values-staging.yaml`, or `values-prod.yaml` for environment-specific host and capacity settings. Example:
 
 ```sh
-kubectl create secret generic mealtrail-secrets -n mealtrail-dev --from-literal=payment-gateway-key=mock
-helm upgrade --install mealtrail ./helm/mealtrail -n mealtrail-dev -f ./helm/mealtrail/values-dev.yaml --set image.repository=ghcr.io/OWNER/food-app --set image.tag=v1.0.0
+kubectl create secret generic Tuckin-secrets -n Tuckin-dev --from-literal=payment-gateway-key=mock
+helm upgrade --install Tuckin ./helm/Tuckin -n Tuckin-dev -f ./helm/Tuckin/values-dev.yaml --set image.repository=ghcr.io/OWNER/food-app --set image.tag=v1.0.0
 ```
 
 The key is optional and mock-only. Use a secret manager for real credentials; never commit secret values. The sample app uses local JSON storage and is not horizontally safe: use shared PostgreSQL and persistent shared state before scaling replicas.

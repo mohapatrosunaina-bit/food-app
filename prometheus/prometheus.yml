@@ -1,8 +1,8 @@
-global:
+﻿global:
   scrape_interval: 15s
 rule_files: [alerts.yml]
 scrape_configs:
-  - job_name: mealtrail
+  - job_name: Tuckin
     metrics_path: /metrics
     static_configs:
-      - targets: ['mealtrail:3000']
+      - targets: ['Tuckin:3000']

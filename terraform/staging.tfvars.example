@@ -1,2 +1,2 @@
-environment = "staging"
-namespace = "mealtrail-staging"
+﻿environment = "staging"
+namespace = "Tuckin-staging"

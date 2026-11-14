@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+﻿apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}
@@ -13,10 +13,10 @@ spec:
       labels:
         app.kubernetes.io/instance: {{ .Release.Name }}
         app.kubernetes.io/component: stable
-        app.kubernetes.io/name: {{ include "mealtrail.name" . }}
+        app.kubernetes.io/name: {{ include "Tuckin.name" . }}
     spec:
       containers:
-        - name: mealtrail
+        - name: Tuckin
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
             - name: http

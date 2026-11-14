@@ -1,9 +1,9 @@
----
-- name: Remove expired MealTrail delivery simulation logs
-  hosts: mealtrail_hosts
+﻿---
+- name: Remove expired Tuckin delivery simulation logs
+  hosts: Tuckin_hosts
   become: true
   vars:
-    delivery_log_dir: /var/log/mealtrail/delivery
+    delivery_log_dir: /var/log/Tuckin/delivery
     retention_days: 14
   tasks:
     - name: Inspect the log directory

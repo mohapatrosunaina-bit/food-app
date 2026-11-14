@@ -1,7 +1,7 @@
-replicaCount: 3
+﻿replicaCount: 3
 autoscaling:
   enabled: true
   minReplicas: 3
   maxReplicas: 12
 ingress:
-  host: mealtrail.example.com
+  host: Tuckin.example.com
